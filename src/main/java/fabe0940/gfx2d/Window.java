@@ -62,6 +62,20 @@ public class Window extends JComponent {
 			v.draw(g);
 		}
 
+		drawText(g);
+
 		return;
+	}
+
+	private void drawText(Graphics g) {
+		g.drawString("y = 3.0e^(-0.33x)sin(3x)", 10, 15);
+		g.drawString("y = (3x^2 - 12x - 15) / (x^2 - 3x - 10)", 410, 15);
+		g.drawString("y^2 - bc^2x^3 - ac^x^2 = 0 with b = 0.5", 10, 415);
+		g.drawString("y^2 - bc^2x^3 - ac^x^2 = 0 with b = 1.0", 410, 415);
+		g.drawString("y^2 - bc^2x^3 - ac^x^2 = 0 with b = 2.0", 810, 415);
+
+		g.drawString("Mason Fabel (fabe0940)", 810, 15);
+		g.drawString("CS324", 810, 25);
+		g.drawString("Homework 2", 810, 35);
 	}
 }
