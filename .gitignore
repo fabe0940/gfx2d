@@ -3,3 +3,9 @@
 
 # VIM temp files
 *.swp
+
+# Gradle build files
+.gradle/*
+gradle/*
+gradlew
+gradlew.bat

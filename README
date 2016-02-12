@@ -4,16 +4,31 @@ OVERVIEW
 Homework #2 for CS324. A 2D graphics demonstration for Java.
 
 
+DEPENDENCIES
+============
+
+To build and run this project, gradle must be installed and in the $PATH.
+
+
 COMPILING
 =========
 
-TBD
+Before building this project for the first time, gradle must be configured. The
+following command will set everything up properly.
+
+$ gradle wrapper
+
+Once this is done, subsequent builds can be completed using the gradlew script.
+
+$ ./gradlew build
 
 
 RUNNING
 =======
 
-TBD
+To run this project, use the gradlew script.
+
+$ ./gradlew run
 
 
 CREDITS
