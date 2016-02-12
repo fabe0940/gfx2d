@@ -28,7 +28,7 @@ public class Viewport {
 		this.size = s;
 	}
 
-	public Point windowToViewport(Window w, Point p) {
+	public Point windowToViewport(Point p) {
 		Point res;
 
 		res = new Point(0, 0);
