@@ -1,6 +1,7 @@
 package fabe0940.gfx2d;
 
 import fabe0940.gfx2d.Constants;
+import fabe0940.gfx2d.Viewport;
 import fabe0940.gfx2d.util.Point;
 import java.awt.*;
 import java.awt.event.*;
@@ -34,12 +35,22 @@ public class Window extends JComponent {
 	}
 
 	public void setWindow(Point p, Point s) {
-		position = p;
-		size = s;
+		this.position = p;
+		this.size = s;
 
 		frame.setBounds(p.x, p.y, s.x, s.y);
 
 		return;
+	}
+
+	public Point viewportToWindow(Viewport v, Point p) {
+		Point res;
+
+		res = new Point(0, 0);
+		res.x = v.getPosition().x + p.x;
+		res.y = v.getPosition().y - p.y;
+
+		return res;
 	}
 
 	public void paintComponent(Graphics g) {
