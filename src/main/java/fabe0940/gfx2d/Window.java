@@ -3,11 +3,11 @@ package fabe0940.gfx2d;
 import fabe0940.gfx2d.Constants;
 import fabe0940.gfx2d.Viewport;
 import fabe0940.gfx2d.util.Point;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Graphics;
 import java.util.List;
 import java.util.LinkedList;
-import javax.swing.*;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
 
 public class Window extends JComponent {
 	private JFrame frame;
@@ -43,6 +43,21 @@ public class Window extends JComponent {
 		return;
 	}
 
+	public void addViewport(Viewport v) {
+		viewports.add(v);
+
+		return;
+	}
+
+	public void removeViewport(Viewport v) {
+		int i;
+
+		i = viewports.indexOf(v);
+		if (i != -1) {
+			viewports.remove(i);
+		}
+	}
+
 	public Point viewportToWindow(Viewport v, Point p) {
 		Point res;
 
@@ -55,7 +70,7 @@ public class Window extends JComponent {
 
 	public void paintComponent(Graphics g) {
 		for (Viewport v : viewports) {
-			v.draw(this);
+			v.draw(g, this);
 		}
 
 		return;
