@@ -22,7 +22,7 @@ public class Window extends JComponent {
 
 		frame = new JFrame(Constants.windowName);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setBounds(position.x, position.y, size.x, size.y);
+		frame.setBounds(position.x, position.y, size.x, size.y + 28);
 		frame.getContentPane().add(this);
 		frame.setVisible(true);
 

@@ -50,7 +50,11 @@ public class Viewport {
 		l = new Line(cursor, p);
 		cursor = p;
 
-		lines.add(l);
+		if (cursor.x >= 0 && cursor.x <= this.size.x) {
+			if (cursor.y >= 0 && cursor.y <= this.size.y) {
+				lines.add(l);
+			}
+		}
 
 		return;
 	}

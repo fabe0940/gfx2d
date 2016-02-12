@@ -49,7 +49,7 @@ public class Coordinate {
 
 		res = new Point(0, 0);
 		res.x = (int)
-			((p.x * (size.x / (Math.abs(domain.x) + Math.abs(domain.x))))
+			((p.x * (size.x / (Math.abs(domain.x) + Math.abs(domain.y))))
 			+ origin.x);
 		res.y = (int)
 			((p.y * (size.y / (Math.abs(range.x) + Math.abs(range.y))))
