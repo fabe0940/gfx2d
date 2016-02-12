@@ -50,6 +50,7 @@ public class Viewport {
 		l = new Line(cursor, p);
 		cursor = p;
 
+		/* Only draw inside the viewport */
 		if (cursor.x >= 0 && cursor.x <= this.size.x) {
 			if (cursor.y >= 0 && cursor.y <= this.size.y) {
 				lines.add(l);
@@ -59,6 +60,7 @@ public class Viewport {
 		return;
 	}
 
+	/* Convert viewport points to window points */
 	public Point viewportToWindow(Point p) {
 		Point res;
 
@@ -69,6 +71,7 @@ public class Viewport {
 		return res;
 	}
 
+	/* Convert window points to viewport points */
 	public Point windowToViewport(Point p) {
 		Point res;
 
@@ -83,9 +86,12 @@ public class Viewport {
 		Point from;
 		Point to;
 
+		/* Draw each line */
 		for (Line l : lines) {
+			/* Convert to window coordinates */
 			from = viewportToWindow(l.start);
 			to = viewportToWindow(l.end);
+
 			g.drawLine(from.x, from.y, to.x, to.y);
 		}
 

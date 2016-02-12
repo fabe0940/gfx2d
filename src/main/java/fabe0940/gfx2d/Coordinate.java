@@ -21,6 +21,7 @@ public class Coordinate {
 		size = s;
 		view = v;
 
+		/* Draw coordinate axis */
 		moveTo2D(new DPoint(domain.x, 0.0));
 		drawTo2D(new DPoint(domain.y, 0.0));
 		moveTo2D(new DPoint(0.0, range.x));
@@ -29,12 +30,14 @@ public class Coordinate {
 		return;
 	}
 
+	/* Move in "math" coordinates */
 	public void moveTo2D(DPoint p) {
 		cursor = p;
 
 		return;
 	}
 
+	/* Draw in "math" coordinates */
 	public void drawTo2D(DPoint p) {
 		view.moveTo2D(coordinateToViewport(cursor));
 
@@ -44,6 +47,7 @@ public class Coordinate {
 		return;
 	}
 
+	/* Convert coordinate ("math") points to viewport points */
 	public Point coordinateToViewport(DPoint p) {
 		Point res;
 
