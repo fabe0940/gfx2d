@@ -1,0 +1,13 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'fabe0940.gfx2d.Gfx2d'
+
+sourceCompatibility = 1.8
+version = '0.1'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'fabe0940 Homework 2',
+                   'Implementation-Version': version
+    }
+}
