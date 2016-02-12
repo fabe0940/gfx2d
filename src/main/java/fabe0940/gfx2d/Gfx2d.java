@@ -1,11 +1,23 @@
+package fabe0940.gfx2d;
+
+import fabe0940.gfx2d.Window;
+import fabe0940.gfx2d.util.Point;
+
 public class Gfx2d {
 	public static void main(String[] args) {
-		int i;
+		Window w;
 
-		System.out.println("Hello world!");
+		w = initGraphics();
 
-		for (i = 0; i < args.length; i++) {
-			System.out.println("> " + args[i]);
-		}
+		while(true);
+	}
+
+	public static Window initGraphics() {
+		Window w;
+
+		w = new Window(new Point(100, 100), new Point(800, 600));
+		// w.addViewport(v)
+
+		return w;
 	}
 }

@@ -6,19 +6,22 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
 import java.util.LinkedList;
-import javax.swing;
+import javax.swing.*;
 
 public class Window extends JComponent {
 	private JFrame frame;
 	private List<Viewport> viewports;
-	private Point size;
 	private Point position;
+	private Point size;
 
-	public Window(Point s, Point p) {
+	public Window(Point p, Point s) {
+		position = p;
+		size = s;
+
 		frame = new JFrame(Constants.windowName);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(s.x, s.y);
-		frame.getContentPanel().add(this);
+		frame.setBounds(position.x, position.y, size.x, size.y);
+		frame.getContentPane().add(this);
 		frame.setVisible(true);
 
 		viewports = new LinkedList<Viewport>();
@@ -26,17 +29,23 @@ public class Window extends JComponent {
 		return;
 	}
 
-	public void setWindow(Point s, Point p) {
-		size = s;
-		position = p;
+	public JFrame getFrame() {
+		return frame;
+	}
 
-		frame.setSize(s.x, s.y);
+	public void setWindow(Point p, Point s) {
+		position = p;
+		size = s;
+
+		frame.setBounds(p.x, p.y, s.x, s.y);
 
 		return;
 	}
 
 	public void paintComponent(Graphics g) {
-		/* do the things */
+		for (Viewport v : viewports) {
+			v.draw(this);
+		}
 
 		return;
 	}

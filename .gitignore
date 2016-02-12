@@ -4,7 +4,10 @@
 # VIM temp files
 *.swp
 
-# Gradle build files
+# Build files
+build/*
+
+# Gradle files
 .gradle/*
 gradle/*
 gradlew
