@@ -1,0 +1,26 @@
+OVERVIEW
+========
+
+Homework #2 for CS324. A 2D graphics demonstration for Java.
+
+
+COMPILING
+=========
+
+To build this project, simply run the Make utility.
+
+$ make
+
+
+RUNNING
+=======
+
+Run this application like any other command line Java application.
+
+$ java Gfx2d
+
+
+CREDITS
+=======
+
+Written by Mason Fabel on 11 February 2016.
