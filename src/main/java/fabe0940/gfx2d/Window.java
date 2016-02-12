@@ -11,21 +11,20 @@ import javax.swing.JFrame;
 
 public class Window extends JComponent {
 	private JFrame frame;
-	private List<Viewport> viewports;
 	private Point position;
 	private Point size;
+	private List<Viewport> viewports;
 
 	public Window(Point p, Point s) {
 		position = p;
 		size = s;
+		viewports = new LinkedList<Viewport>();
 
 		frame = new JFrame(Constants.windowName);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBounds(position.x, position.y, size.x, size.y);
 		frame.getContentPane().add(this);
 		frame.setVisible(true);
-
-		viewports = new LinkedList<Viewport>();
 
 		return;
 	}
@@ -58,19 +57,9 @@ public class Window extends JComponent {
 		}
 	}
 
-	public Point viewportToWindow(Viewport v, Point p) {
-		Point res;
-
-		res = new Point(0, 0);
-		res.x = v.getPosition().x + p.x;
-		res.y = v.getPosition().y - p.y;
-
-		return res;
-	}
-
 	public void paintComponent(Graphics g) {
 		for (Viewport v : viewports) {
-			v.draw(g, this);
+			v.draw(g);
 		}
 
 		return;
